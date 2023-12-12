@@ -44,7 +44,7 @@ class SeleniumNewTest {
 	@BeforeEach
 	void setUp() throws Exception {
 
-		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 
@@ -60,12 +60,12 @@ class SeleniumNewTest {
 	@Test
 	void checkProsSite() throws InterruptedException {
 		
-		driver.get("http://pros.unicam.it/");
+		driver.get("http://localhost:8080/spm2023");
 
 		Thread.sleep(3000);
 		
 		String at = driver.getTitle();
-		String et = "PROS - PROcesses & Services lab | Computer Science division @Unicam";
+		String et = "SPM 2023";
 		
 		//System.out.println(at);		
 		Thread.sleep(4000);

@@ -48,16 +48,17 @@ class SeleniumTest {
 	void checkProsSite() throws InterruptedException {
 
 		String projectPath = System.getProperty("user.dir");
-		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver");
+		System.out.println(projectPath);
+		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
 
 		//System.out.println(projectPath)
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://pros.unicam.it/");
+		driver.get("http://localhost:8080/spm2023");
 
 		Thread.sleep(3000);
 		
 		String at = driver.getTitle();
-		String et = "PROS";
+		String et = "SPM 2023";
 		
 		//System.out.println(at);		
 		Thread.sleep(4000);
