@@ -3,12 +3,7 @@ package unicam.spm2023.selenium;
 import static org.junit.jupiter.api.Assertions.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -52,6 +47,7 @@ class SeleniumNewTest {
 	}
 
 	@Test
+	@Tag("AcceptanceTest")
 	void checkProsSite() throws InterruptedException {
 
 		driver.get("http://localhost:8080/spm2023");
