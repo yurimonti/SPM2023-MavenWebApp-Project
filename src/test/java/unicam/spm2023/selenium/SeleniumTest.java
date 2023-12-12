@@ -1,6 +1,8 @@
 package unicam.spm2023.selenium;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,6 +20,7 @@ class SeleniumTest {
 	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		WebDriverManager.chromedriver().setup();
 	}
 	
 	
@@ -46,11 +49,6 @@ class SeleniumTest {
 	@Test
 	@Disabled
 	void checkProsSite() throws InterruptedException {
-
-		String projectPath = System.getProperty("user.dir");
-		System.out.println(projectPath);
-		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
-
 		//System.out.println(projectPath)
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:8080/spm2023");
@@ -66,7 +64,6 @@ class SeleniumTest {
 		assertEquals(et,at);
 		driver.close();
 		driver.quit();
-		
 	}
 
 }
