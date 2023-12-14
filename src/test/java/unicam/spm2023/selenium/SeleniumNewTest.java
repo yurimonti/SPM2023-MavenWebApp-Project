@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.Keys;
 
 import java.util.List;
@@ -16,9 +17,12 @@ import java.util.ArrayList;
 class SeleniumNewTest {
 	static WebDriver driver;
 
+	static ChromeOptions options = new ChromeOptions();
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		WebDriverManager.chromedriver().setup();
+		options.addArguments("--headless");
 	}
 	
 	
@@ -34,7 +38,7 @@ class SeleniumNewTest {
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 	}
 
 	/**
