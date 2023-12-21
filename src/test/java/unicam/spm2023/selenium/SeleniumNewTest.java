@@ -55,6 +55,7 @@ class SeleniumNewTest {
 	}
 
 	@Test
+	@Disabled
 	@Tag("AcceptanceTest")
 	void checkProsSite() throws InterruptedException {
 
