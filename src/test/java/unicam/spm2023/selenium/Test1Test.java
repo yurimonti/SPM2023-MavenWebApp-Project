@@ -3,6 +3,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
+import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,16 +20,19 @@ public class Test1Test {
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
+  @Tag("AcceptanceTest")
   public void setUp() {
     vars = new HashMap<String, Object>();
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
   }
   @After
+  @Tag("AcceptanceTest")
   public void tearDown() {
     driver.quit();
   }
   @Test
+  @Tag("AcceptanceTest")
   public void test1() {
     driver.get("https://pros.unicam.it/");
     driver.findElement(By.cssSelector(".toggle-search")).click();

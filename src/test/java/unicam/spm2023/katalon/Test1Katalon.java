@@ -8,6 +8,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+
+import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,6 +24,7 @@ public class Test1Katalon {
   private StringBuffer verificationErrors = new StringBuffer();
   JavascriptExecutor js;
   @Before
+  @Tag("AcceptanceTest")
   public void setUp() throws Exception {
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
@@ -29,6 +32,7 @@ public class Test1Katalon {
   }
 
   @Test
+  @Tag("AcceptanceTest")
   public void test1Katalon() throws Exception {
     driver.get("https://pros.unicam.it/");
     driver.findElement(By.cssSelector(".toggle-search")).click();
@@ -39,6 +43,7 @@ public class Test1Katalon {
   }
 
   @After
+  @Tag("AcceptanceTest")
   public void tearDown() throws Exception {
     driver.quit();
     String verificationErrorString = verificationErrors.toString();

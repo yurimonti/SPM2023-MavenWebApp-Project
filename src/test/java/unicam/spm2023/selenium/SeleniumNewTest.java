@@ -20,6 +20,7 @@ class SeleniumNewTest {
 	static ChromeOptions options = new ChromeOptions();
 
 	@BeforeAll
+	@Tag("AcceptanceTest")
 	static void setUpBeforeClass() throws Exception {
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--headless");
@@ -30,6 +31,7 @@ class SeleniumNewTest {
 	 * @throws java.lang.Exception
 	 */
 	@AfterAll
+	@Tag("AcceptanceTest")
 	static void tearDownAfterClass() throws Exception {		
 	}
 
@@ -37,6 +39,7 @@ class SeleniumNewTest {
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
+	@Tag("AcceptanceTest")
 	void setUp() throws Exception {
 		driver = new ChromeDriver(options);
 	}
@@ -45,6 +48,7 @@ class SeleniumNewTest {
 	 * @throws java.lang.Exception
 	 */
 	@AfterEach
+	@Tag("AcceptanceTest")
 	void tearDown() throws Exception {
 		driver.close();
 		driver.quit();

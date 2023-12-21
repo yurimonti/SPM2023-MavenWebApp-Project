@@ -3,12 +3,7 @@ package unicam.spm2023.selenium;
 import static org.junit.jupiter.api.Assertions.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +14,7 @@ class SeleniumTest {
 	 * @throws java.lang.Exception
 	 */
 	@BeforeAll
+	@Tag("AcceptanceTest")
 	static void setUpBeforeClass() throws Exception {
 		WebDriverManager.chromedriver().setup();
 	}
@@ -28,6 +24,7 @@ class SeleniumTest {
 	 * @throws java.lang.Exception
 	 */
 	@AfterAll
+	@Tag("AcceptanceTest")
 	static void tearDownAfterClass() throws Exception {		
 	}
 
@@ -35,6 +32,7 @@ class SeleniumTest {
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
+	@Tag("AcceptanceTest")
 	void setUp() throws Exception {
 	}
 
@@ -42,6 +40,7 @@ class SeleniumTest {
 	 * @throws java.lang.Exception
 	 */
 	@AfterEach
+	@Tag("AcceptanceTest")
 	void tearDown() throws Exception {
 
 	}
